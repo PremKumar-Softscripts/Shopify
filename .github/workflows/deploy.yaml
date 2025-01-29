@@ -19,3 +19,5 @@ jobs:
       - name: Push theme to Shopify
         run: |
           shopify theme push --store https://j7kuar-13.myshopify.com --password ${{ secrets.SHOPIFY_PASSWORD }}
+     - name: Debug SHOPIFY_PASSWORD
+        run: echo $SHOPIFY_PASSWORD
