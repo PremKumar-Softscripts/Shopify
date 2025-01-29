@@ -17,4 +17,4 @@ jobs:
         run: npm install -g @shopify/cli@latest
 
       - name: Push theme to Shopify
-        run: shopify theme push --store https://j7kuar-13.myshopify.com --password ${{ secrets.SHOPIFY_PASSWORD }} --theme 174196195648 --force
+        run: shopify theme push --store https://j7kuar-13.myshopify.com --password ${{ secrets.SHOPIFY_PASSWORD }} --theme 174196195648 --force --allow-live
