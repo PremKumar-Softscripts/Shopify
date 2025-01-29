@@ -17,8 +17,6 @@ jobs:
         run: npm install -g @shopify/cli@latest
 
       - name: Set up Shopify credentials
-        env:
-          SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
         run: echo "SHOPIFY_PASSWORD=${{ secrets.SHOPIFY_PASSWORD }}" >> $GITHUB_ENV
 
       - name: Push theme to Shopify
