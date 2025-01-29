@@ -16,8 +16,10 @@ jobs:
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli@latest
 
-      - name: Set up Shopify credentials
-        run: echo "SHOPIFY_PASSWORD=${{ secrets.SHOPIFY_PASSWORD }}" >> $GITHUB_ENV
+      - name: Authenticate Shopify CLI
+        run: |
+          echo "SHOPIFY_PASSWORD=${{ secrets.SHOPIFY_PASSWORD }}" >> $GITHUB_ENV
+          shopify login --store https://j7kuar-13.myshopify.com --password ${{ secrets.SHOPIFY_PASSWORD }}
 
       - name: Push theme to Shopify
         run: shopify theme push --store https://j7kuar-13.myshopify.com --password ${{ secrets.SHOPIFY_PASSWORD }}
